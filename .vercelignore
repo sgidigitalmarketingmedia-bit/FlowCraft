@@ -1,0 +1,21 @@
+# Version control
+.git
+.gitignore
+
+# Dependencies
+node_modules
+bun.lock
+
+# Build outputs & caches
+dist
+build
+.cache
+
+# Development & source archives
+screenshots
+temp_assets
+scripts
+*.zip
+*.log
+test.svg
+metadata.json

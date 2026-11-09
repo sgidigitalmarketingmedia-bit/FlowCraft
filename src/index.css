@@ -1,0 +1,318 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --os-violet: #6B39F4;
+    --os-indigo: #4B22B8;
+    --os-obsidian: #08070D;
+    --os-prism: #110F1C;
+    --os-surface: #171426;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    background-color: #08070D;
+    color: #F8FAFC;
+  }
+
+  body {
+    background-color: #08070D;
+    overflow-x: hidden;
+  }
+}
+
+/* OneSeven Tech Ambient Glow & Glassmorphism */
+.glass-oneseven {
+  background: rgba(17, 15, 28, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(107, 57, 244, 0.15);
+}
+
+.glass-oneseven-card {
+  background: linear-gradient(135deg, rgba(23, 20, 38, 0.8) 0%, rgba(13, 11, 22, 0.9) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 92, 246, 0.18);
+  box-shadow: 0 20px 40px -15px rgba(10, 8, 20, 0.7);
+}
+
+.glow-oneseven {
+  box-shadow: 0 0 35px -5px rgba(107, 57, 244, 0.35);
+}
+
+.glow-oneseven-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glow-oneseven-hover:hover {
+  box-shadow: 0 0 30px 2px rgba(107, 57, 244, 0.4);
+  border-color: rgba(139, 92, 246, 0.5);
+  transform: translateY(-2px);
+}
+
+/* OneSeven Ambient Background Radial Lights */
+.bg-oneseven-mesh {
+  background-color: #08070D;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(107, 57, 244, 0.22), transparent 70%),
+    radial-gradient(circle 600px at 85% 30%, rgba(75, 34, 184, 0.14), transparent 60%),
+    radial-gradient(circle 500px at 15% 70%, rgba(139, 92, 246, 0.1), transparent 60%);
+}
+
+/* 3D Phone Perspective & Floating Animations */
+@keyframes floatPhone3D {
+  0%, 100% {
+    transform: perspective(1200px) rotateY(-8deg) rotateX(5deg) translateY(0px);
+  }
+  50% {
+    transform: perspective(1200px) rotateY(-11deg) rotateX(7deg) translateY(-14px);
+  }
+}
+
+@keyframes floatShadowPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(0.85);
+    opacity: 0.25;
+  }
+}
+
+@keyframes radarScan {
+  0% {
+    top: 15%;
+    opacity: 0.2;
+  }
+  50% {
+    top: 75%;
+    opacity: 0.9;
+  }
+  100% {
+    top: 15%;
+    opacity: 0.2;
+  }
+}
+
+@keyframes laserPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px #8B5CF6);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px #6B39F4);
+  }
+}
+
+@keyframes ambientPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.08);
+  }
+}
+
+.animate-float-phone {
+  animation: floatPhone3D 6s ease-in-out infinite;
+}
+
+.animate-float-shadow {
+  animation: floatShadowPulse 6s ease-in-out infinite;
+}
+
+.animate-radar-scan {
+  animation: radarScan 2.5s ease-in-out infinite;
+}
+
+.animate-ambient-pulse {
+  animation: ambientPulse 8s ease-in-out infinite;
+}
+
+/* OneSeven Canvas Dot Grid */
+.bg-canvas-dots-light {
+  background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+.bg-canvas-dots-dark {
+  background-color: #08070D;
+  background-image: 
+    radial-gradient(rgba(107, 57, 244, 0.45) 0.85px, transparent 0.85px), 
+    radial-gradient(rgba(139, 92, 246, 0.15) 0.85px, transparent 0.85px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+
+/* Custom sleek OneSeven violet scrollbar for panels */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(107, 57, 244, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 57, 244, 0.6);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.3);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(167, 139, 250, 0.7);
+}
+
+/* ============================================================== */
+/* MOBILE SIMULATOR HARDWARE-ACCELERATED SCREEN TRANSITIONS       */
+/* ============================================================== */
+
+@keyframes simSlideLeftIn {
+  0% {
+    transform: translate3d(100%, 0, 0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes simSlideRightIn {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes simSlideUpIn {
+  0% {
+    transform: translate3d(0, 100%, 0);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes simSlideDownIn {
+  0% {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes simFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes simPopIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  65% {
+    transform: scale(1.02);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes simFlipIn {
+  0% {
+    transform: perspective(1000px) rotateY(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(1000px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes simBounceIn {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(0.96);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.sim-transition-slide-left {
+  animation: simSlideLeftIn var(--sim-duration, 350ms) var(--sim-easing, cubic-bezier(0.16, 1, 0.3, 1)) both;
+  will-change: transform, opacity;
+}
+
+.sim-transition-slide-right {
+  animation: simSlideRightIn var(--sim-duration, 350ms) var(--sim-easing, cubic-bezier(0.16, 1, 0.3, 1)) both;
+  will-change: transform, opacity;
+}
+
+.sim-transition-slide-up {
+  animation: simSlideUpIn var(--sim-duration, 400ms) var(--sim-easing, cubic-bezier(0.16, 1, 0.3, 1)) both;
+  will-change: transform, opacity;
+}
+
+.sim-transition-slide-down {
+  animation: simSlideDownIn var(--sim-duration, 400ms) var(--sim-easing, cubic-bezier(0.16, 1, 0.3, 1)) both;
+  will-change: transform, opacity;
+}
+
+.sim-transition-fade {
+  animation: simFadeIn var(--sim-duration, 400ms) var(--sim-easing, ease-in-out) both;
+  will-change: opacity;
+}
+
+.sim-transition-pop {
+  animation: simPopIn var(--sim-duration, 380ms) var(--sim-easing, cubic-bezier(0.34, 1.56, 0.64, 1)) both;
+  will-change: transform, opacity;
+}
+
+.sim-transition-flip {
+  animation: simFlipIn var(--sim-duration, 500ms) var(--sim-easing, ease-in-out) both;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+.sim-transition-bounce {
+  animation: simBounceIn var(--sim-duration, 550ms) var(--sim-easing, cubic-bezier(0.34, 1.56, 0.64, 1)) both;
+  will-change: transform, opacity;
+}

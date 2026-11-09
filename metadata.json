@@ -1,0 +1,8 @@
+{
+  "name": "Remix FlowCraft Pro2_production - Mobile Journey \u0026 React Prototype Studio",
+  "description": "Interactive Figma-style workboard for product managers to map user journey flows, configure dynamic mobile UI elements, simulate active prototypes, and export deployable React code with developer handoff JSON schemas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
